@@ -25,10 +25,10 @@ export function AppShell({
           決めちゃお
         </Link>
         <Link
-          href="/history"
+          href="/settings"
           className="rounded-full px-2 py-1 text-sm font-bold text-muted hover:text-foreground"
         >
-          履歴
+          設定
         </Link>
       </header>
       <main className="flex flex-1 flex-col">{children}</main>

@@ -7,6 +7,7 @@ import { loadLast } from "@/lib/session";
 
 export default function DoneClient() {
   const [decision] = useState(() => loadLast());
+  const [copied, setCopied] = useState(false);
 
   if (!decision) {
     return (
@@ -18,6 +19,15 @@ export default function DoneClient() {
       </AppShell>
     );
   }
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(`${decision.title}: ${decision.chosen}`);
+      setCopied(true);
+    } catch {
+      // 使えない環境では何もしない
+    }
+  };
 
   return (
     <AppShell>
@@ -37,6 +47,9 @@ export default function DoneClient() {
       </div>
 
       <div className="flex flex-col gap-3">
+        <PrimaryButton onClick={copy}>
+          {copied ? "コピーした" : "コピーする"}
+        </PrimaryButton>
         <PrimaryButton href="/">もうひとつ決める</PrimaryButton>
         <PrimaryButton href="/history" variant="secondary">
           履歴を見る

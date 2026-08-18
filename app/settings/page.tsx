@@ -3,11 +3,11 @@
 import dynamic from "next/dynamic";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
-const HomeClient = dynamic(() => import("./home-client"), {
+const SettingsClient = dynamic(() => import("./settings-client"), {
   ssr: false,
   loading: () => <LoadingScreen />,
 });
 
-export default function HomePage() {
-  return <HomeClient />;
+export default function SettingsPage() {
+  return <SettingsClient />;
 }

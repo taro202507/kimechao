@@ -79,7 +79,12 @@ export default function DecideClient() {
 
       <div className="mt-auto flex flex-col gap-3 pt-10">
         {phase === "idle" ? (
-          <PrimaryButton onClick={spin}>決めちゃお</PrimaryButton>
+          <>
+            <PrimaryButton onClick={spin}>決めちゃお</PrimaryButton>
+            <PrimaryButton variant="secondary" onClick={() => router.push("/custom")}>
+              直す
+            </PrimaryButton>
+          </>
         ) : null}
 
         {phase === "spinning" ? (

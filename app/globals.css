@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+:root,
+html[data-theme="sunset"] {
   --background: #fff3e6;
   --foreground: #2a1810;
   --accent: #e24a1b;
@@ -8,6 +9,51 @@
   --muted: #8b6454;
   --card: #fffaf4;
   --line: #f0d9c8;
+  --glow: #ffd7b8;
+}
+
+html[data-theme="ocean"] {
+  --background: #e8f4fb;
+  --foreground: #0f2a3d;
+  --accent: #1a7aad;
+  --accent-dark: #14608a;
+  --muted: #4a7188;
+  --card: #f4fafd;
+  --line: #c5e0ee;
+  --glow: #b8dff5;
+}
+
+html[data-theme="forest"] {
+  --background: #eef6e8;
+  --foreground: #1a2e14;
+  --accent: #3d7a32;
+  --accent-dark: #2f6128;
+  --muted: #5a7552;
+  --card: #f6faf3;
+  --line: #cde0c4;
+  --glow: #c5e6b8;
+}
+
+html[data-theme="grape"] {
+  --background: #f4eef8;
+  --foreground: #2a1838;
+  --accent: #7c3aed;
+  --accent-dark: #5b21b6;
+  --muted: #6b5a7a;
+  --card: #faf6fd;
+  --line: #e0d0f0;
+  --glow: #ddc8f5;
+}
+
+html[data-theme="mono"] {
+  --background: #f2f2f0;
+  --foreground: #1a1a1a;
+  --accent: #3f3f3f;
+  --accent-dark: #262626;
+  --muted: #6b6b6b;
+  --card: #fafafa;
+  --line: #d4d4d4;
+  --glow: #e4e4e4;
 }
 
 @theme inline {
@@ -23,7 +69,7 @@
 
 body {
   background:
-    radial-gradient(1200px 400px at 50% -80px, #ffd7b8 0%, transparent 70%),
+    radial-gradient(1200px 400px at 50% -80px, var(--glow) 0%, transparent 70%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-zen), sans-serif;

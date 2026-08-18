@@ -51,3 +51,8 @@ export function loadLast(): Decision | null {
     return null;
   }
 }
+
+export function clearLast() {
+  if (!canUseStorage()) return;
+  sessionStorage.removeItem(LAST_KEY);
+}

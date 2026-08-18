@@ -25,3 +25,15 @@ export function addDecision(decision: Decision) {
   const next = [decision, ...loadHistory()].slice(0, MAX_HISTORY);
   localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
 }
+
+export function clearHistory() {
+  if (!canUseStorage()) return;
+  localStorage.removeItem(HISTORY_KEY);
+}
+
+export function removeDecision(id: string) {
+  if (!canUseStorage()) return;
+  const next = loadHistory().filter((item) => item.id !== id);
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+  return next;
+}

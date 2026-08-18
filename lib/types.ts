@@ -3,6 +3,12 @@ export type DecisionDraft = {
   options: string[];
 };
 
+export type HomeItem = DecisionDraft & {
+  source: "pin" | "preset";
+};
+
+export type ThemeId = "sunset" | "ocean" | "forest" | "grape" | "mono";
+
 export type Decision = {
   id: string;
   title: string;
